@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_02_020320) do
+ActiveRecord::Schema.define(version: 2021_02_02_045213) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2021_02_02_020320) do
     t.string "ip"
     t.text "hostnames", null: false
     t.index ["hostnames"], name: "index_hostnames_trigram", opclass: :gin_trgm_ops, using: :gin
+    t.index ["ip"], name: "index_dns_records_on_ip", unique: true
   end
 
 end

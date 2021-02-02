@@ -6,8 +6,8 @@ module UseCase
       record = DnsRecord.find_by(ip: valid_dns_record.ip)
 
       if record
-        record.hostnames = valid_dns_record.hostnames
-        record.save!
+        record.update(hostnames: valid_dns_record.hostnames)
+        record
       else
         DnsRecord.create(ip: valid_dns_record.ip, hostnames: valid_dns_record.hostnames)
       end
