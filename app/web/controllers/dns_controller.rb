@@ -13,7 +13,7 @@ module Controllers
       valid_record = Validators::DnsRecordValidator.new(params)
       inserted_record = UseCases::DnsRecordInsert.new.execute(valid_record)
 
-      render json: inserted_record
+      render json: { id: inserted_record.id }, status: 201
     end
   end
 end

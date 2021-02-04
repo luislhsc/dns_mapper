@@ -18,12 +18,12 @@ module Validators
 
     private
 
-    def split_words(words)
-      if words
-        words.split(',').map(&:downcase)
-      else
-        []
+      def split_words(words)
+        if words
+          words.split(',').map(&:downcase)
+        else
+          []
+        end
       end
-    end
   end
 end
