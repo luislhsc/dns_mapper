@@ -1,3 +1,4 @@
+
 class SearchDnsRecordsValidator
   require 'resolv'
 
@@ -8,7 +9,7 @@ class SearchDnsRecordsValidator
   validates :page, presence: true, allow_blank: false
 
   def initialize(params)
-    @page = params['page']
+    @page = params['page'].to_i
     @included_hostnames = split_words(params['included'])
     @excluded_hostnames = split_words(params['excluded'])
     validate!
@@ -18,7 +19,7 @@ class SearchDnsRecordsValidator
 
   def split_words(words)
     if words
-      words.split(',')
+      words.split(',').map(&:downcase)
     else
       []
     end

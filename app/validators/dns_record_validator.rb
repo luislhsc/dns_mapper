@@ -1,3 +1,4 @@
+
 class DnsRecordValidator
   require 'resolv'
 
