@@ -6,8 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-DnsRecord.create(ip: '1.1.1.1', hostnames: 'lorem.com ipsum.com dolor.com amet.com')
-DnsRecord.create(ip: '2.2.2.2', hostnames: 'ipsum.com')
-DnsRecord.create(ip: '3.3.3.3', hostnames: 'ipsum.com dolor.com amet.com')
-DnsRecord.create(ip: '4.4.4.4', hostnames: 'ipsum.com dolor.com sit.com amet.com')
-DnsRecord.create(ip: '5.5.5.5', hostnames: 'dolor.com sit.com')
+Models::DnsRecord.create(ip: '1.1.1.1', hostnames: 'lorem.com ipsum.com dolor.com amet.com')
+Models::DnsRecord.create(ip: '2.2.2.2', hostnames: 'ipsum.com')
+Models::DnsRecord.create(ip: '3.3.3.3', hostnames: 'ipsum.com dolor.com amet.com')
+Models::DnsRecord.create(ip: '4.4.4.4', hostnames: 'ipsum.com dolor.com sit.com amet.com')
+Models::DnsRecord.create(ip: '5.5.5.5', hostnames: 'dolor.com sit.com')

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe SearchDnsRecordsValidator do
+RSpec.describe Validators::SearchDnsRecordsValidator do
   context 'validates params received from a request' do
     context 'when the params are valid' do
       it 'it returns a valid SearchDnsRecordsValidator object' do
@@ -21,7 +21,7 @@ RSpec.describe SearchDnsRecordsValidator do
     context 'when the params are invalid' do
       it 'it returns false when valid? is called' do
         params = {
-          'page' => ''
+          'page' => nil
         }
 
         expect { described_class.new(params) }.to raise_error(ActiveModel::ValidationError)

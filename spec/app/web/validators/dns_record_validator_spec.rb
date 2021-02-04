@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe DnsRecordValidator do
+RSpec.describe Validators::DnsRecordValidator do
   context 'validates params received from a request' do
     context 'when the params are valid' do
       it 'it returns a valid DnsRecordValidator object' do
