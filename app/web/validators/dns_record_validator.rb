@@ -1,3 +1,4 @@
+# Validates params for DNS Record that comes from an API request
 module Validators
   class DnsRecordValidator
     require 'resolv'

@@ -1,4 +1,4 @@
-# UseCase module with a Single Responsibility of counting the hostnames
+# UseCase module with a Single Responsibility of counting duplicated hostnames
 module UseCases
   class CountMatchingRecords
     def execute(dns_records)

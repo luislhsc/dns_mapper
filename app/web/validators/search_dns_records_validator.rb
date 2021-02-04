@@ -1,3 +1,4 @@
+# Validates Search params
 module Validators
   class SearchDnsRecordsValidator
     require 'resolv'
