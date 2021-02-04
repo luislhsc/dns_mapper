@@ -9,9 +9,10 @@ module Validators
     validates :page, presence: true, allow_blank: false
 
     def initialize(params)
-      @page = params['page'].to_i
+      @page = params['page'].to_i if params['page'].present?
       @included_hostnames = split_words(params['included'])
       @excluded_hostnames = split_words(params['excluded'])
+
       validate!
     end
 
