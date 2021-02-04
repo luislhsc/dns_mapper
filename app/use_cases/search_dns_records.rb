@@ -2,7 +2,7 @@
 # Since our search use case is to render a response excluding any hostnames specified in the API call
 # We remove the `included_hostnames` from the hostnames in our DnsRecords
 class SearchDnsRecords
-  PAGE_SIZE = 2
+  PAGE_SIZE = 30
 
   def execute(valid_search)
     included_query = valid_search.included_hostnames.reduce(DnsRecord) do |query, included|
@@ -26,9 +26,11 @@ class SearchDnsRecords
   private
 
     def remove_included_hostnames(records, included_hostnames)
-      records.each do |record|
+      records = records.each do |record|
         included_hostnames.each { |hostname| record.hostnames.slice!(hostname) }
       end
+
+      records.filter { |record| record.hostnames.present? }
     end
 
     def filter_included_hostnames(query, included_hostname)
