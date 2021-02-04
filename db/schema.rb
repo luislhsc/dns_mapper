@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2021_02_02_045213) do
   enable_extension "plpgsql"
 
   create_table "dns_records", force: :cascade do |t|
-    t.string "ip"
+    t.string "ip", null: false
     t.text "hostnames", null: false
     t.index ["hostnames"], name: "index_hostnames_trigram", opclass: :gin_trgm_ops, using: :gin
     t.index ["ip"], name: "index_dns_records_on_ip", unique: true

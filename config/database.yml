@@ -19,7 +19,7 @@ default: &default
   encoding: unicode
   user: postgres
   password: postgres
-  host: localhost
+  host: <%= ENV.fetch("POSTGRES_HOST") { "localhost" } %>
   port: 5432
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
