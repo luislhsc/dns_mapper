@@ -33,7 +33,10 @@ It is hard to do with Rails because of its convention over configuration style b
 The tests are pretty simple, isolated whenever is possible and following the 4 (in this case 3) phase steps.
 The Controller test is a integrated test that goes throught the whole flow.
 I just added a few tests to save some time.
-To run the tests you can use `docker-compose run bundle exec rspec`
+Running tests:
+First create the test DB: `docker-compose run -e "RAILS_ENV=test" web bundle exec rake db:create`
+Then run t he tests: `docker-compose run -e "RAILS_ENV=test" web bundle exec rspec`
+
 
 
 ### How to run
@@ -42,5 +45,5 @@ To run the tests you can use `docker-compose run bundle exec rspec`
 `docker-compose up`
 
 You can use the API using Postman e.g. GET of `http://0.0.0.0:3000/dns_records?page=1&included=ipsum.com, dolor.com&excluded=sit.com`
-The DB will be seeded with the doc examples.
+The DB will be seeded with the examples in doc.
 
